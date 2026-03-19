@@ -1,0 +1,138 @@
+/* 기본 폰트 및 초기화 */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard-Regular";
+}
+
+/* 3. Footer 하단 고정을 위한 전체 구조 변경 */
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex; /* block에서 flex로 변경 */
+  flex-direction: column; /* 세로로 쌓기 */
+}
+
+/* 1. 헤더 가로 정렬 유지 */
+.header-container {
+  background-color: white;
+  height: 80px; /* 고정 높이 권장 */
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* 메뉴 간격 균등 분배 */
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.header-container div {
+  font-size: 1.2em;
+}
+
+.link-container a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 2. 메인 콘텐츠 영역 (자동 높이 조절) */
+.main-container {
+  background-color: whitesmoke;
+  flex: 1; /* 남은 공간을 모두 차지하여 푸터를 아래로 밀어냄 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가로 중앙 */
+  justify-content: center; /* 세로 중앙 */
+  padding: 20px;
+  overflow-y: auto;
+  height: 90%;
+}
+
+/* 2. 로그인/회원가입 폼 수직 정렬 (h1 하단 배치) */
+.account-container {
+  display: flex;
+  flex-direction: column; /* 수직 정렬 */
+  gap: 15px; /* 입력창 사이 간격 */
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.account-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.account-container button {
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 3. 푸터 하단 고정 */
+.footer-container {
+  background-color: lightgray;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  color: #666;
+  flex-shrink: 0; /* 높이 축소 방지 */
+}
+
+/* 리스트 페이지 등 기타 스타일 유지 및 보정 */
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+}
+
+
+
+
+.input-group {
+    display: flex;
+    justify-content: space-between; /* 라벨과 입력창 사이 간격 */
+    align-items: flex-start;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+.input-group label {
+  font-size: 0.95em;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+  
+  /* 줄바꿈 방지 핵심 속성 */
+  white-space: nowrap;    /* 텍스트가 한 줄로만 표시됨 */
+  display: inline-block;  /* 영역을 한 줄로 고정 */
+  width: 20%;            /* 라벨이 한 줄 전체를 차지하도록 설정 */
+  text-align: left;       /* 왼쪽 정렬 확인 */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
