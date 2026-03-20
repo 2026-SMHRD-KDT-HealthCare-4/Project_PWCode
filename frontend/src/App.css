@@ -136,34 +136,8 @@
 }
 
 .input-group input {
-  width: 80%; 
+  width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
-}
-
-/*중복확인 버튼 추가 후 줄바꿈 현상 해결 */
-.id-check-wrapper {
-  display: flex;
-  gap: 8px;
-  flex: 1;
-}
-
-.id-check-wrapper input {
-  flex: 1;
-  min-width: 0; /* 짤림 방지 */
-}
-
-.id-check-wrapper button {
-  white-space: nowrap;
-  cursor: pointer;
-  width: auto;
-}
-
-.radio-group-container {
-    display: flex;
-    flex: 1; /* 남은 80% 영역을 다 차지함 */
-    justify-content: flex-start; /* 왼쪽 정렬 */
-    gap: 90px; /* 남성/여성 사이 간격 */
-    padding-left: 5px; /* 입력창 텍스트 시작점과 맞추기 위한 미세 조정 */
 }
