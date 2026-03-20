@@ -2,14 +2,18 @@
 
 const db = require('../database/db'); // 데이터베이스 연결 설정
 
+// 회원가입을 통해 받은 데이터를 순서대로 받기
 exports.signUp = (data) => {
     return new Promise((resolve, reject) => {
-        db.query(`INSERT INTO user (userID, userPW) VALUES (?, ?) `, [data[0], data[1]], (err, result) => {
+        db.query(`INSERT INTO user (userID, userPW, userName, userGender, userBirth, userNumber)
+            VALUES (?, ?, ?, ?, ?, ?) `,
+            [data[0], data[1], data[2], data[3], data[4], data[5]],
+            (err, result) => {
             if (err) reject(err);
             else resolve(result);
         });
     });
-};
+};  
 
 exports.getUser = (userID) => {
     return new Promise((resolve, reject) => {
