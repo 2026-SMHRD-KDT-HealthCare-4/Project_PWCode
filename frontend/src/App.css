@@ -55,6 +55,11 @@
   height: 90%;
 }
 
+/* 2. 메인 컨텐츠 영역 h1 태그 글씨 다크모드에서 안보임 해결 */
+.main-container h1 {
+  color: black;
+}
+
 /* 2. 로그인/회원가입 폼 수직 정렬 (h1 하단 배치) */
 .account-container {
   display: flex;
