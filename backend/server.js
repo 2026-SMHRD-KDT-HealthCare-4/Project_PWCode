@@ -1,7 +1,11 @@
 // server.js
 const express = require('express');
 const db = require('./database/db');
+const axios = require('axios');
 const cors = require("cors");
+// 라우터 모듈 임포트
+const diaryRoutes = require('./routes/diaryRoutes');
+const chatRoutes = require('./routes/chatRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
@@ -17,6 +21,10 @@ app.post('/api/userData', (req, res) => {
     console.log(req.body);
     res.json('Data received');  // json 형태로 응답을 보냄
 });
+
+// 엔드포인트 라우팅 매핑
+app.use('/api/diary', diaryRoutes);
+app.use('/api/chat', chatRoutes);
 
 // DB 데이터 읽기
 app.get('/', (req, res) => {

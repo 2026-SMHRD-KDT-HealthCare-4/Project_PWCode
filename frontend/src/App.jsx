@@ -6,6 +6,10 @@ import Signup from './components/Signup';
 import Main from './pages/Main';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import EmotionDiary from './components/EmotionDiary';
+import Chatbot from './components/Chatbot';
+import LifeData from './components/LifeData';
+import Statistics from './components/Statistics';
 
 function App() {
   // 클라이언트
@@ -32,6 +36,10 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/' element={<Main />}></Route>
+        <Route path='/diary' element={<EmotionDiary />} />
+        <Route path='/chat' element={<Chatbot />} />
+        <Route path='/life' element={<LifeData />} />
+        <Route path='/stats' element={<Statistics />} />
       </Routes>
       <Footer />
 
