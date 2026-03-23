@@ -1,0 +1,51 @@
+/* src/pages/Main.css */
+
+.main-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  flex-direction: column;  
+  min-height: 100vh;      
+  text-align: center;
+}
+
+.media-block {
+  /* 미디어 영역의 크기를 명시적으로 고정하여 안정성 확보 */
+  width: 800px;
+  height: 800px;
+}
+
+.main-video,
+.main-image {
+  width: 100%;           
+  height: 100%;          
+  border-radius: 15px;    
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+  object-fit: cover;
+}
+
+/* 텍스트 영역 레이아웃 및 애니메이션 설정 */
+.text-block {
+  margin-top: 20px;
+  /* 핵심 개념: 투명도 전환 애니메이션으로 부드러운 페이드인 효과 부여 */
+  transition: opacity 0.8s ease-in-out; 
+}
+
+/* 비디오 재생 중: 공간은 차지하지만 투명하게 처리 */
+.text-block.hidden {
+  opacity: 0;
+  pointer-events: none; /* 숨겨진 상태에서 클릭 방지 */
+}
+
+/* 비디오 종료 후: 텍스트 노출 */
+.text-block.visible {
+  opacity: 1;
+}
+
+.main-title {
+  margin: 0; /* 마진 초기화로 정확한 높이 계산 유도 */
+}
+
+.main-subtitle {
+  margin-top: 10px;
+}
